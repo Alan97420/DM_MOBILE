@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E772FF40225F655F0001481F /* testButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = E772FF3F225F655F0001481F /* testButton2.png */; };
+		E772FF42225F65660001481F /* testButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E772FF41225F65660001481F /* testButton.png */; };
 		E7E2CE2722538DDA00826108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2CE2622538DDA00826108 /* AppDelegate.swift */; };
 		E7E2CE2922538DDA00826108 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE2822538DDA00826108 /* GameScene.sks */; };
 		E7E2CE2B22538DDA00826108 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE2A22538DDA00826108 /* Actions.sks */; };
@@ -15,9 +17,25 @@
 		E7E2CE3222538DDA00826108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE3022538DDA00826108 /* Main.storyboard */; };
 		E7E2CE3422538DDD00826108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE3322538DDD00826108 /* Assets.xcassets */; };
 		E7E2CE3722538DDD00826108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE3522538DDD00826108 /* LaunchScreen.storyboard */; };
+		E7E2CE4D2253907600826108 /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE3E2253907500826108 /* torpedo.mp3 */; };
+		E7E2CE4E2253907600826108 /* torpedo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE402253907500826108 /* torpedo@2x.png */; };
+		E7E2CE4F2253907600826108 /* torpedo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE412253907500826108 /* torpedo@3x.png */; };
+		E7E2CE502253907600826108 /* alien@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE422253907500826108 /* alien@2x.png */; };
+		E7E2CE512253907600826108 /* alien3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE432253907500826108 /* alien3@2x.png */; };
+		E7E2CE522253907600826108 /* alien3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE442253907500826108 /* alien3@3x.png */; };
+		E7E2CE532253907600826108 /* alien@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE452253907500826108 /* alien@3x.png */; };
+		E7E2CE542253907600826108 /* shuttle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE462253907500826108 /* shuttle@3x.png */; };
+		E7E2CE552253907600826108 /* shuttle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE472253907500826108 /* shuttle@2x.png */; };
+		E7E2CE562253907600826108 /* alien2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE482253907500826108 /* alien2@2x.png */; };
+		E7E2CE572253907600826108 /* alien2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE492253907500826108 /* alien2@3x.png */; };
+		E7E2CE582253907600826108 /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE4A2253907500826108 /* explosion.mp3 */; };
+		E7E2CE592253907600826108 /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE4B2253907600826108 /* Starfield.sks */; };
+		E7E2CE5A2253907600826108 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7E2CE4C2253907600826108 /* Explosion.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E772FF3F225F655F0001481F /* testButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testButton2.png; sourceTree = "<group>"; };
+		E772FF41225F65660001481F /* testButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testButton.png; sourceTree = "<group>"; };
 		E7E2CE2322538DDA00826108 /* test_jeux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test_jeux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E2CE2622538DDA00826108 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E2CE2822538DDA00826108 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -28,6 +46,20 @@
 		E7E2CE3322538DDD00826108 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7E2CE3622538DDD00826108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7E2CE3822538DDD00826108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7E2CE3E2253907500826108 /* torpedo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedo.mp3; sourceTree = "<group>"; };
+		E7E2CE402253907500826108 /* torpedo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torpedo@2x.png"; sourceTree = "<group>"; };
+		E7E2CE412253907500826108 /* torpedo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torpedo@3x.png"; sourceTree = "<group>"; };
+		E7E2CE422253907500826108 /* alien@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien@2x.png"; sourceTree = "<group>"; };
+		E7E2CE432253907500826108 /* alien3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien3@2x.png"; sourceTree = "<group>"; };
+		E7E2CE442253907500826108 /* alien3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien3@3x.png"; sourceTree = "<group>"; };
+		E7E2CE452253907500826108 /* alien@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien@3x.png"; sourceTree = "<group>"; };
+		E7E2CE462253907500826108 /* shuttle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuttle@3x.png"; sourceTree = "<group>"; };
+		E7E2CE472253907500826108 /* shuttle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuttle@2x.png"; sourceTree = "<group>"; };
+		E7E2CE482253907500826108 /* alien2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien2@2x.png"; sourceTree = "<group>"; };
+		E7E2CE492253907500826108 /* alien2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien2@3x.png"; sourceTree = "<group>"; };
+		E7E2CE4A2253907500826108 /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
+		E7E2CE4B2253907600826108 /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Starfield.sks; sourceTree = "<group>"; };
+		E7E2CE4C2253907600826108 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +92,57 @@
 		E7E2CE2522538DDA00826108 /* test_jeux */ = {
 			isa = PBXGroup;
 			children = (
+				E7E2CE4C2253907600826108 /* Explosion.sks */,
 				E7E2CE2622538DDA00826108 /* AppDelegate.swift */,
-				E7E2CE2822538DDA00826108 /* GameScene.sks */,
 				E7E2CE2A22538DDA00826108 /* Actions.sks */,
-				E7E2CE2C22538DDA00826108 /* GameScene.swift */,
 				E7E2CE2E22538DDA00826108 /* GameViewController.swift */,
 				E7E2CE3022538DDA00826108 /* Main.storyboard */,
+				E7E8B51A225F4B5500A1468C /* Jeux */,
+				E7E8B51B225F4BB000A1468C /* musique */,
+				E7E2CE3F2253907500826108 /* Images */,
+				E7E2CE4B2253907600826108 /* Starfield.sks */,
 				E7E2CE3322538DDD00826108 /* Assets.xcassets */,
 				E7E2CE3522538DDD00826108 /* LaunchScreen.storyboard */,
 				E7E2CE3822538DDD00826108 /* Info.plist */,
 			);
 			path = test_jeux;
+			sourceTree = "<group>";
+		};
+		E7E2CE3F2253907500826108 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E772FF41225F65660001481F /* testButton.png */,
+				E772FF3F225F655F0001481F /* testButton2.png */,
+				E7E2CE402253907500826108 /* torpedo@2x.png */,
+				E7E2CE412253907500826108 /* torpedo@3x.png */,
+				E7E2CE422253907500826108 /* alien@2x.png */,
+				E7E2CE432253907500826108 /* alien3@2x.png */,
+				E7E2CE442253907500826108 /* alien3@3x.png */,
+				E7E2CE452253907500826108 /* alien@3x.png */,
+				E7E2CE462253907500826108 /* shuttle@3x.png */,
+				E7E2CE472253907500826108 /* shuttle@2x.png */,
+				E7E2CE482253907500826108 /* alien2@2x.png */,
+				E7E2CE492253907500826108 /* alien2@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		E7E8B51A225F4B5500A1468C /* Jeux */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2CE2822538DDA00826108 /* GameScene.sks */,
+				E7E2CE2C22538DDA00826108 /* GameScene.swift */,
+			);
+			path = Jeux;
+			sourceTree = "<group>";
+		};
+		E7E8B51B225F4BB000A1468C /* musique */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2CE4A2253907500826108 /* explosion.mp3 */,
+				E7E2CE3E2253907500826108 /* torpedo.mp3 */,
+			);
+			path = musique;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,10 +204,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E2CE3222538DDA00826108 /* Main.storyboard in Resources */,
+				E7E2CE5A2253907600826108 /* Explosion.sks in Resources */,
+				E7E2CE4F2253907600826108 /* torpedo@3x.png in Resources */,
 				E7E2CE2922538DDA00826108 /* GameScene.sks in Resources */,
+				E7E2CE542253907600826108 /* shuttle@3x.png in Resources */,
+				E7E2CE532253907600826108 /* alien@3x.png in Resources */,
+				E7E2CE502253907600826108 /* alien@2x.png in Resources */,
+				E772FF40225F655F0001481F /* testButton2.png in Resources */,
+				E772FF42225F65660001481F /* testButton.png in Resources */,
+				E7E2CE592253907600826108 /* Starfield.sks in Resources */,
+				E7E2CE572253907600826108 /* alien2@3x.png in Resources */,
+				E7E2CE552253907600826108 /* shuttle@2x.png in Resources */,
+				E7E2CE562253907600826108 /* alien2@2x.png in Resources */,
 				E7E2CE3422538DDD00826108 /* Assets.xcassets in Resources */,
+				E7E2CE4E2253907600826108 /* torpedo@2x.png in Resources */,
+				E7E2CE512253907600826108 /* alien3@2x.png in Resources */,
 				E7E2CE3722538DDD00826108 /* LaunchScreen.storyboard in Resources */,
+				E7E2CE4D2253907600826108 /* torpedo.mp3 in Resources */,
 				E7E2CE2B22538DDA00826108 /* Actions.sks in Resources */,
+				E7E2CE522253907600826108 /* alien3@3x.png in Resources */,
+				E7E2CE582253907600826108 /* explosion.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6YAK28W9RG;
 				INFOPLIST_FILE = test_jeux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,7 +392,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "group.test-jeux";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6YAK28W9RG;
 				INFOPLIST_FILE = test_jeux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,7 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "group.test-jeux";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
