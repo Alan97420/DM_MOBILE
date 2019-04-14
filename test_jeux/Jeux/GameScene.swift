@@ -15,31 +15,39 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     var starfield:SKEmitterNode!
     var player:SKSpriteNode!
     var scoreLabel:SKLabelNode!
+    var fire:SKEmitterNode!
     var score:Int = 0{
         didSet{
             scoreLabel.text = "Score: \(score)"
         }
     }
     var gameTimer : Timer!
-    var possibleAlien  = ["alien","alien2","alien3"] // tableau d'alien
+    var possibleAlien  = ["alienbobo","asteroid","alien2-1"] // tableau d'alien
     let alienCategory:UInt32 = 0x1 << 1 // 1*2^1 = 2
     let photonTorpedoCategory:UInt32 = 0x1 << 0 // 1*2^0 =1
     
     var motionManager = CMMotionManager() // variable qui prend en parametre les donner de l'accelerometre
     var xAccelaration: CGFloat = 0
     
+    var livesArray:[SKSpriteNode]!
+    
     
     override func didMove(to view: SKView) {
-        starfield = SKEmitterNode(fileNamed: "Starfield")
-        starfield.position = CGPoint(x: 0, y: 1472)
-        starfield.advanceSimulationTime(10)
-        self.addChild(starfield)
+        
+        addLives()
+        starfield = SKEmitterNode(fileNamed: "Starfield") // recupere la secene
+        starfield.position = CGPoint(x: 0, y: 1472)// positon de la scene
+        starfield.advanceSimulationTime(10) // temp de 10
+        self.addChild(starfield) // ajout
         
         starfield.zPosition = -1
-        
-        player  = SKSpriteNode(imageNamed: "shuttle") // recupere l'image
-        player.position = CGPoint(x:0, y:-self.frame.size.height+740)// recupere l'image 
+        fire = SKEmitterNode(fileNamed: "MyParticle")
+        player  = SKSpriteNode(imageNamed: "vaisseau") // recupere l'image
+        player.size.height = 110
+        player.size.width =  90
+        player.position = CGPoint(x:0, y:-self.frame.size.height+810)// recupere l'image
         self.addChild(player)
+        self.addChild(fire)
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         scoreLabel = SKLabelNode(text: "Score: 0")
         scoreLabel.position = CGPoint(x: -200, y: 550)
@@ -59,11 +67,27 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             }
         }
     }
+    
+    func addLives(){
+        livesArray = [SKSpriteNode]()
+        for live in 1...3{
+            let liveNode = SKSpriteNode(imageNamed:"vaisseau")
+            liveNode.size.height = 90
+            liveNode.size.width =  80
+            liveNode.position = CGPoint(x: 300 - CGFloat(4 - live) * liveNode.size.width, y: self.frame.size.height - 770)
+            print( self.frame.size.width - CGFloat(4 - live) * liveNode.size.width)
+            self.addChild(liveNode)
+            livesArray.append(liveNode)
+        }
+        print(self.frame.size.height - 60)
+    }
     @objc func addAlien(){
-        possibleAlien = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleAlien) as! [String] // prend dans le tableau un element random
+        possibleAlien = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleAlien) as! [String] // range les elemennts du tableau de manniere 
         let alien  = SKSpriteNode(imageNamed: possibleAlien[0]) // attribut à la variable un element
         let randomAlienPosition  = GKRandomDistribution(lowestValue: -300, highestValue:300) // choisit de maniere random une posisiton entre 300 et -300
         let position = CGFloat(randomAlienPosition.nextInt()) // attribut à la variable position le random alien que l'on met en entier et en CGFloat
+        alien.size.height = 50
+        alien.size.width =  50
         alien.position = CGPoint(x: position, y: self.frame.size.height + alien.size.height)//positionne alien au dessu de l'ecrant plus la taille de l'image
         alien.physicsBody  = SKPhysicsBody(rectangleOf: alien.size) // creation de la hitbox de l'alien
         alien.physicsBody?.isDynamic = true
@@ -73,11 +97,31 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         
         self.addChild(alien) // ajout de l'alien
         let animationDuration = 6 // variable qui permet de regler la vitesse
-        var ActionArray = [SKAction] () // creation du tableau d'action
+        var ActionArray = [SKAction] () // creation de la liste d'acction
         ActionArray.append(SKAction.move(to: CGPoint(x: position, y: -frame.size.height), duration: TimeInterval(animationDuration))) // permet de gere la position des aliens et la vitesse.
+        
+        ActionArray.append(SKAction.run {
+            if self.livesArray.count > 0{ // si la liste est >0
+                let liveNode = self.livesArray.first //
+                liveNode!.removeFromParent()
+                self.livesArray.removeFirst()
+                
+                if self.livesArray.count == 0{ // si la list est vide
+                    self.gameTimer.invalidate()
+                    let storyboard  = UIStoryboard(name: "Main", bundle: nil) // constante du storyboard
+                    let vc = storyboard.instantiateViewController(withIdentifier: "Menu") // identifie le viewcontroller
+                    vc.view.frame = (self.view?.frame)!
+                    vc.view.layoutIfNeeded()
+                    
+                    UIView.transition(with: self.view!, duration: 0.3, options: .transitionFlipFromRight, animations: {self.view?.window?.rootViewController = vc}, completion: {completed in})
+                    
+                }
+                
+            }
+        })
         ActionArray.append(SKAction.removeFromParent())
         alien.run(SKAction.sequence(ActionArray))
-        print(alien.size)
+        
 
 
     }
@@ -138,6 +182,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     override func didSimulatePhysics() {
         player.position.x += xAccelaration * 70// ajoute a la position x de player les donner de l'accelerometre*70
+        fire.position = player.position
+        fire.position.y -= 30
         if player.position.x < -300{ // si la position du player en x est inferieur -300 du coup on le remet en 300 de l'ecrant
             player.position = CGPoint(x: self.size.width + 300, y: player.position.y)
         }else if player.position.x > self.size.width + 300{ // sinon si la position du player en x est superieur 300 on le remet en -300
